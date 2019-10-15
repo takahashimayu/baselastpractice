@@ -1,0 +1,310 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #4e454a;
+}
+input:focus,
+button:focus,
+textarea:focus {
+    outline: none;
+}
+h1 {
+    cursor: pointer;
+}
+header {
+    /* background: linear-gradient(to bottom, #82cddd, #FFF); */
+    background-color: #82cddd;
+    padding-bottom: 16px;
+    position: fixed;
+    width: 100vw;
+    box-shadow: 0px 1px 3px -3px rgba(0,0,0,0.6);
+    z-index: 1;
+    height: 150px;
+}
+header .content {
+    width: 90vw;
+    margin: 0 auto;
+}
+header .content .top {
+    display: flex;
+    align-items: center;
+}
+header .content .top h1 {
+    padding: 10px 0 5px;
+    font-size: 1.9em;
+    margin: 0!important;
+}
+header .content .top .menu-btn {
+    display: none;
+}
+header .content .top nav {
+    margin-left: 100px;
+}
+header .content .top nav ul {
+    display: flex;
+    list-style: none;
+}
+header .content .top nav ul li {
+    font-size: 1.1em;
+    padding: 5px;
+    margin: 10px;
+}
+header .content .top nav ul li a {
+    text-decoration: none;
+    color: #4e454a;
+    font-weight: bold;
+}
+header .content .top nav ul li a:visited {
+    color: #4e454a;
+}
+header .content .top nav ul li a:hover {
+    filter: contrast(10%);
+}
+header p {
+    margin: 5px 0 6px;
+    font-size: 0.9em;
+}
+
+/* 画面幅が480pxまでの時 */
+@media screen and (max-width:480px) {
+    header .content .top {
+        display: block;
+    }
+    header .content .top .menu-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+    header .content .top .menu-btn::before {
+        content:'\f0c9';
+        font-family:'Font Awesome 5 Free';
+        font-weight:900;
+        font-size: 2em;
+    }
+    header .content .top .menu-btn.close::before {
+        content:'\f00d';
+    }
+    header .content .top nav.hide {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s;
+    }
+    header .content .top nav {
+        margin: 0;
+        padding: 0 4px;
+        left: 0;
+        position: fixed;
+        background-color: #82cddd;
+        width: 100vw;
+        /* max-height: 100px; */
+        overflow: hidden;
+        transition: all 0.5s;
+        z-index: 2;
+    }
+    header .content .top nav ul {
+        display: grid;
+        gap: 5px;
+        grid-template-columns: 1fr 1fr;
+        width: 90vw;
+        margin:0 auto;
+        padding-bottom: 14px;
+    }
+    header .content .top nav ul li {
+        margin: 0;
+        padding: 4px;
+        font-size: 1.05em;
+    }
+}
+/* 画面幅が823pxまでの時 */
+@media screen and (max-width:823px) {
+    header .content .top h1 {
+        font-size: 1.6em;
+    }
+    header .content .top nav ul li {
+        font-size: 1.0em;
+    }
+}
+
+/* index */
+.index header input[type="text"] {
+    font-size: 0.9em;
+    background-color:#fff;
+    padding: 3px 10px;
+    width: 280px;
+    margin: 6px 5px 5px 0;
+    border-radius: 22px;
+}
+.index header i {
+    padding: 5px;
+    color: #00608d;
+    font-size: 1.2em;
+}
+.index header i:hover {
+    cursor: pointer;
+    filter: contrast(10%);
+}
+.index .main {
+    padding-top: 150px;
+    width: 90vw;
+    margin: 0 auto;
+}
+.index .main p {
+    font-weight: bold;
+    padding:15px 0 4px;
+}
+.index .main .alert {
+    color: #ea5549;
+}
+.index .main .list {
+    width: 90vw;
+    margin: 18px auto;
+}
+.index .main .list .item {
+    background-color: #e8ece9;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    width: 320px;
+    margin: 8px 5px;
+}
+.index .main .list .item .date {
+    font-size: 0.9em;
+    margin: 4px;
+}
+.index .main .list .item .comment {
+    padding-left: 1em;
+}
+
+/* wether */
+.wether header select {
+    font-size: 0.9em;
+    background-color:#fff;
+    padding: 3px 10px;
+    width: 200px;
+    margin: 6px 5px 5px 0;
+    border-radius: 8px;
+}
+.wether header select:focus {
+    outline: none;
+}
+.wether header select:hover {
+    cursor: pointer;
+}
+.wether header form span {
+    margin-left: -30px;
+    font-size: 0.7em;
+    opacity: 0.9;
+}
+.wether header form span:hover {
+    cursor: pointer;
+}
+.wether .main {
+    padding-top: 150px;
+}
+.wether .wether-content {
+    margin: 22px auto;
+    width: 90vw;
+}
+.wether .main .wether-content .wether-item {
+    background-color: #e8ece9;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    width: 320px;
+    margin: 14px 5px;
+}
+.wether .main .wether-content .wether-item .item-header{
+    display: flex;
+    padding: 6px;
+    font-size: 1em;
+}
+.wether .main .wether-content .wether-item .item-header .dt-txt{
+    font-weight: bold;
+    padding: 0 4px;
+}
+.wether .main .wether-content .wether-item .item-header .dt-txt .span-time{
+    font-size: 1.3em;
+}
+.wether .main .wether-content .wether-item .item-main {
+    display: flex;
+}
+.wether .main .wether-content .wether-item img {
+    height: 50px;
+}
+.wether .main .wether-content .wether-item .temp-area{
+    height: 65px;
+    margin: 0 10px;
+}
+.wether .main .wether-content .wether-item .temp{
+    font-size: 2em;
+    font-weight: bold;
+    padding: 8px 0;
+}
+.wether .main .wether-content .wether-item .other-main{
+    margin: 0 10px;
+}
+.wether .main .wether-content .wether-item span{
+    font-size: 0.85em;
+}
+.wether .main .wether-content .wether-item .grnd-level{
+    font-weight: bold;
+    margin: 5px 0;
+}
+.wether .main .wether-content .wether-item .humidity{
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* contact */
+.contact header {
+    height: 110px;
+}
+.contact .main {
+    padding-top: 110px;
+    width: 90vw;
+    margin: 0 auto;
+}
+.contact .main p {
+    font-weight: bold;
+    padding:15px 0 4px;
+}
+.contact .main .alert {
+    color: #ea5549;
+}
+.contact .main form {
+    padding: 10px 0;
+}
+.contact .main form input,
+.contact .main form textarea {
+    border: 1.8px solid rgba(78, 69, 74, 0.4);
+    border-radius: 7px;
+    margin: 8px 0;
+    font-size: 0.9em;
+    line-height: 1.6em;
+    width: 240px;
+    padding: 1px 4px;
+}
+.contact .main form textarea {
+    width: 320px;
+    height: 100px;
+}
+.contact .main form input[type="submit"] {
+    width: 110px;
+    background-color: #00608d;
+    color: #fff;
+    padding: 5px 0;
+    opacity: 0.95;
+}
+.contact .main form input[type="submit"]:hover {
+    opacity: 0.8;
+}
+.contact footer {
+    font-size: 0.9em;
+    width: 90vw;
+    margin: 50px auto 10px;
+}
